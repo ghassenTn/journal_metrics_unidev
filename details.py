@@ -8,18 +8,18 @@ import warnings
 import math
 sys.setrecursionlimit(10000000)
 warnings.filterwarnings("ignore")
+import constant as cs
 
 ## Firebird database connection details
 
-
-host = '10.10.1.26'
-# host = '127.0.0.1'
-user = 'sysdba'
-password = 'bmw'
-port = 3050
-con_str = f"{host}/{port}:/opt/gps/backend/fc_param.fdb"
+host = cs.host
+user = cs.user
+password = cs.password
+port = cs.password
+con_str = cs.con_str
 connection = fdb.connect(con_str, user=user, password=password)
 cursor = connection.cursor()
+
 
 # get specific data from db
 def getIdEnergieTypeFromVehTable(cbox):

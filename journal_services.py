@@ -5,11 +5,12 @@ import sys
 from typing import List, Dict, Any, Optional
 from details import get_journal_metrics, calculate_group_distances
 from fastapi.encoders import jsonable_encoder
+import constant as cs
 
 # --- InfluxDB Client Setup ---
-INFLUXDB_HOST = '10.10.1.24'
-INFLUXDB_PORT = 8086
-INFLUXDB_DATABASE = "gps"
+INFLUXDB_HOST = cs.INFLUXDB_HOST
+INFLUXDB_PORT = cs.INFLUXDB_PORT
+INFLUXDB_DATABASE = cs.INFLUXDB_DATABASE
 
 try:
     client = InfluxDBClient(host=INFLUXDB_HOST, port=INFLUXDB_PORT, database=INFLUXDB_DATABASE)

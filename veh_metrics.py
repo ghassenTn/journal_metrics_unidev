@@ -6,9 +6,13 @@ import time
 from datetime import datetime, timedelta
 from details import allMetricsCalcResult
 # Influx DB for time series data
+import constant as cs 
+INFLUXDB_HOST = cs.INFLUXDB_HOST
+INFLUXDB_PORT = cs.INFLUXDB_PORT
+INFLUXDB_DATABASE = cs.INFLUXDB_DATABASE
 
 try:
-    client = InfluxDBClient(host='10.10.1.24', port=8086,database = "gps")
+    client = InfluxDBClient(host=INFLUXDB_HOST, port=INFLUXDB_PORT,database = INFLUXDB_DATABASE)
 except Exception as e:
     print(f"Error connecting to InfluxDB: {e}")
     sys.exit(1)
